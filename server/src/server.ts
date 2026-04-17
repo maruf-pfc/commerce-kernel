@@ -28,7 +28,7 @@ async function main() {
 
   app.use(express.json());
   app.use(morgan("dev"));
-  app.use(clerkMiddleware);
+  app.use(clerkMiddleware());
 
   app.get("/health", (_req, res) => {
     res.status(200).json(ok({ message: "Server is healthy" }));
